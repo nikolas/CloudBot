@@ -12,7 +12,7 @@ nltk==3.3
 psutil==5.4.7
 pyenchant==2.0.0
 pythonwhois==2.4.3
-requests==2.20.0
+requests==2.21.0
 requests-oauthlib==1.0.0
 SQLAlchemy==1.2.12
 tweepy==3.6.0
