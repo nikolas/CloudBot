@@ -9,7 +9,7 @@ isodate==0.6.0
 lxml==4.2.3
 microdata==0.6.1
 nltk==3.3
-psutil==5.4.7
+psutil==5.5.1
 pyenchant==2.0.0
 pythonwhois==2.4.3
 requests==2.20.0
