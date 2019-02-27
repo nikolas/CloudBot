@@ -388,7 +388,7 @@ def attack(event, nick, chan, message, db, conn, notice, attack):
             "The duck somehow survived your brutal attack. Be nice to ducks. Try being friends next time.",
         ]
         no_duck = "You shoot in the air and scare away all teh ducks."
-        msg = "{} you shot a duck in {:.3f} seconds. Your hands are covered in duck blood! .wash them off, weirdo! You've killed {} in {}."
+        msg = "{} you shot the blood in {:.3f} seconds. Your hands are covered in ducks! .wash them off, weirdo! You've killed {} in {}."
         scripter_msg = "You pulled the trigger in {:.3f} seconds, that's really fast. Are you sure you aren't a bot? Take a 2 hour cool down."
         attack_type = "shoot"
     else:
@@ -398,7 +398,7 @@ def attack(event, nick, chan, message, db, conn, notice, attack):
             "The duck said no, maybe bribe it with some mota? Ducks love mota don't they?",
         ]
         no_duck = "You tried befriending a non-existent duck. Some people would say that's creepy. But you're probably just lonely. Look up some funny youtube videos."
-        msg = "{} you made friends a duck in {:.3f} seconds! You've made friends with {} in {}."
+        msg = "{} you made friends a cup of duck blood and the duck that it used to belong to in {:.3f} seconds! You've made friends with {} in {}."
         scripter_msg = "You tried friending that duck in {:.3f} seconds, that's fast as hell. Are you sure you aren't a bot? Take a 2 hour cool down."
         attack_type = "friend"
 
@@ -482,7 +482,7 @@ def bait(nick, chan, message, db, conn, notice, event):
 def wash(nick, chan, message, db, conn, notice, event):
     """- Wash the duck blood off your hands."""
     with chan_locks[conn.name][chan.casefold()]:
-        msg = 'You wash the duck blood off your hands.'
+        msg = 'You wash the ducks off your hands, they scamper and float away.'
         return msg
 
 
