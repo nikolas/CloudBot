@@ -366,7 +366,8 @@ def attack(event, nick, chan, message, db, conn, notice, attack):
             '{} discusses life, the universe, and everything.',
             '{} tells you about {} Amiga.',
             '{} tells you about {} Sun station.',
-            '{} shows you {} laptop and it\'s covered with mustard and ketchup! lol.',
+            '{} wants to play OpenTTD with you.',
+            '{} draws a picture of Lennart Poettering.',
         ]
         story = random.choice(duck_stories).format(pronoun[0], pronoun[1])
 
