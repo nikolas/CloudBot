@@ -363,6 +363,7 @@ def attack(event, nick, chan, message, db, conn, notice, attack):
             '{} discusses arch linux.',
             '{} discusses HaikuOS.',
             '{} discusses OpenBSD.',
+            '{} discusses life, the universe, and everything.',
             '{} tells you about {} Amiga.',
             '{} tells you about {} Sun station.',
             '{} shows you {} laptop and it\'s covered with mustard and ketchup! lol.',
@@ -370,16 +371,24 @@ def attack(event, nick, chan, message, db, conn, notice, attack):
         story = random.choice(duck_stories).format(pronoun[0], pronoun[1])
 
         smoke_types = [
-            "a bud",
-            "a joint",
-            "a spliff",
-            "a rollie",
+            "smoke a bud",
+            "smoke a bowl",
+            "smoke a joint",
+            "smoke a spliff",
+            "smoke a rollie",
+            "smoke a bowl of kief",
+            "hit the blunt",
+            "eat magic brownies",
+            "do knifers",
+            "dab",
+            "vape",
+            "toke up",
+            "get blazed",
         ]
         smoke_type = random.choice(smoke_types)
 
-        pre_msg = "You smoke {} with the duck. {} You just made a new duck friend. :)".format(smoke_type, story)
-        msg = "{} " + pre_msg
-        no_duck = "No ducks around to smoke with, so you smoke {} with rblor.".format(smoke_type)
+        msg = "{} " + "You {} with the duck ".format(smoke_type) + "for {:.3f} seconds." + " {} You just made a new duck friend. :)".format(story)
+        no_duck = "No ducks around to smoke with, so you {} with rblor.".format(smoke_type)
         scripter_msg = "You tried smoking with that duck in {:.3f} seconds!! Are you sure you aren't a bot? Take a 2 hour cool down."
         attack_type = "friend"
         # TODO: add secret 420 functionality
