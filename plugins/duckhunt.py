@@ -361,6 +361,7 @@ def attack(event, nick, chan, message, db, conn, notice, attack):
         duck_stories = [
             '{} tells you about {} xmonad setup.',
             '{} talks about IceWM.',
+            '{} talks about evilwm.',
             '{} discusses gentoo.',
             '{} discusses arch linux.',
             '{} discusses HaikuOS.',
