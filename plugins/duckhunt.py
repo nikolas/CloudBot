@@ -355,6 +355,8 @@ def attack(event, nick, chan, message, db, conn, notice, attack):
         pronoun = random.choice([
             ('He', 'his'),
             ('She', 'her'),
+            ('They', 'their'),
+            ('Ze', 'hir'),
         ])
         duck_stories = [
             '{} tells you about {} xmonad setup.',
