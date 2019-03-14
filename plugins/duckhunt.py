@@ -363,6 +363,7 @@ def attack(event, nick, chan, message, db, conn, notice, attack):
             '{} talks about IceWM.',
             '{} talks about evilwm.',
             '{} discusses gentoo.',
+            '{} reminisces about freshmeat.net, and other stuff before github.', 
             '{} discusses arch linux.',
             '{} discusses HaikuOS.',
             '{} discusses OpenBSD.',
