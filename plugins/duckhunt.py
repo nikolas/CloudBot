@@ -402,8 +402,13 @@ def attack(event, nick, chan, message, db, conn, notice, attack):
             "uhhh. You missed the duck completely! Phew! Be nice to ducks. Try being friends next time.",
             "Your gun jammed! Be nice to ducks. Try being friends next time.",
             "The duck somehow survived your brutal attack. Be nice to ducks. Try being friends next time.",
+            "The duck is using Linux and they avoid your attack with a crazy firewall.",
         ]
-        no_duck = "You shoot in the air and scare away all teh ducks."
+        no_duck = random.choice([
+            "You shoot in the air and scare away all teh ducks.",
+            "You shoot in the air and attract some ducks.",
+            "Damn, you accidentally shot yourself and turn into a duck!",
+        ])
         msg = "{} you shot the blood in {:.3f} seconds. Your hands are covered in ducks! .wash them off, weirdo! You've killed {} in {}."
         scripter_msg = "You pulled the trigger in {:.3f} seconds, that's really fast. Are you sure you aren't a bot? Take a 2 hour cool down."
         attack_type = "shoot"
