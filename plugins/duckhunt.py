@@ -341,6 +341,11 @@ def update_score(nick, chan, db, conn, shoot=0, friend=0):
         dbadd_entry(nick, chan, db, conn, shoot, friend)
         return {'shoot': shoot, 'friend': friend}
 
+def get_animal():    
+    return random.choice([
+        'duck',
+        'computer',
+    ])
 
 def attack(event, nick, chan, message, db, conn, notice, attack):
     global game_status, scripters
@@ -349,6 +354,8 @@ def attack(event, nick, chan, message, db, conn, notice, attack):
 
     network = conn.name
     status = game_status[network][chan]
+
+    animal = get_animal()
 
     out = ""
     if attack == "smoke":
@@ -392,35 +399,35 @@ def attack(event, nick, chan, message, db, conn, notice, attack):
         ]
         smoke_type = random.choice(smoke_types)
 
-        msg = "{} " + "You {} with the duck ".format(smoke_type) + "for {:.3f} seconds." + " {} You just made a new duck friend. :)".format(story)
-        no_duck = "No ducks around to smoke with, so you {} with rblor.".format(smoke_type)
-        scripter_msg = "You tried smoking with that duck in {:.3f} seconds!! Are you sure you aren't a bot? Take a 2 hour cool down."
+        msg = "{} " + "You {} with the {} ".format(smoke_type, animal) + "for {:.3f} seconds." + " {} You just made a new {} friend. :)".format(story, animal)
+        no_duck = "No {}s around to smoke with, so you {} with rblor.".format(animal, smoke_type)
+        scripter_msg = "You tried smoking with that " + animal + " in {:.3f} seconds!! Are you sure you aren't a bot? Take a 2 hour cool down."
         attack_type = "friend"
         # TODO: add secret 420 functionality
     elif attack == "shoot":
         miss = [
-            "uhhh. You missed the duck completely! Phew! Be nice to ducks. Try being friends next time.",
-            "Your gun jammed! Be nice to ducks. Try being friends next time.",
-            "The duck somehow survived your brutal attack. Be nice to ducks. Try being friends next time.",
-            "The duck is using Linux and they avoid your attack with a crazy firewall.",
+            "uhhh. You missed the {} completely! Phew! Be nice to {}s. Try being friends next time.".format(animal, animal),
+            "Your gun jammed! Be nice to {}s. Try being friends next time.".format(animal),
+            "The {} somehow survived your brutal attack. Be nice to {}s. Try being friends next time.".format(animal, animal),
+            "The {} is using Linux and they avoid your attack with a crazy firewall.".format(animal),
         ]
         no_duck = random.choice([
-            "You shoot in the air and scare away all teh ducks.",
-            "You shoot in the air and attract some ducks.",
-            "Damn, you accidentally shot yourself and turn into a duck!",
+            "You shoot in the air and scare away all teh {}s.".format(animal),
+            "You shoot in the air and attract some {}s.".format(animal),
+            "Damn, you accidentally shot yourself and turn into a {}!".format(animal),
         ])
-        msg = "{} you shot the blood in {:.3f} seconds. Your hands are covered in ducks! .wash them off, weirdo! You've killed {} in {}."
+        msg = "{} you shot the blood in {:.3f} seconds. Your hands are covered in " + animal + "s! .wash them off, weirdo! You've killed {} in {}."
         scripter_msg = "You pulled the trigger in {:.3f} seconds, that's really fast. Are you sure you aren't a bot? Take a 2 hour cool down."
         attack_type = "shoot"
     else:
         miss = [
-            "The duck didn't want to be friends, maybe next time.",
-            "Well this is awkward, the duck needs to think about it. 🤔",
-            "The duck said no, maybe bribe it with some mota? Ducks love mota don't they?",
+            "The {} didn't want to be friends, maybe next time.".format(animal),
+            "Well this is awkward, the {} needs to think about it. 🤔".format(animal),
+            "The {} said no, maybe bribe it with some mota? {}s love mota don't they?".format(animal),
         ]
-        no_duck = "You tried befriending a non-existent duck. Some people would say that's creepy. But you're probably just lonely. Look up some funny youtube videos."
-        msg = "{} you made friends a cup of duck blood and the duck that it used to belong to in {:.3f} seconds! You've made friends with {} in {}."
-        scripter_msg = "You tried friending that duck in {:.3f} seconds, that's fast as hell. Are you sure you aren't a bot? Take a 2 hour cool down."
+        no_duck = "You tried befriending a non-existent " + animal + ". Some people would say that's creepy. But you're probably just lonely. Look up some funny youtube videos."
+        msg = "{} you made friends a cup of " + animal + " blood and the " + animal + " that it used to belong to in {:.3f} seconds! You've made friends with {} in {}."
+        scripter_msg = "You tried friending that " + animal + " in {:.3f} seconds, that's fast as hell. Are you sure you aren't a bot? Take a 2 hour cool down."
         attack_type = "friend"
 
     if not status['game_on']:
@@ -494,7 +501,7 @@ def bait(nick, chan, message, db, conn, notice, event):
     ]
     with chan_locks[conn.name][chan.casefold()]:
         bait = random.choice(baits)
-        msg = 'You throw some {} out to the chan. Let\'s see if any ducks take teh bait... {}'.format(
+        msg = 'You throw some {} out to the chan. Let\'s see if any ' + get_animal() + 's take teh bait... {}'.format(
             bait[0], bait[1] if len(bait) > 1 else '')
         return msg
 
@@ -503,7 +510,7 @@ def bait(nick, chan, message, db, conn, notice, event):
 def wash(nick, chan, message, db, conn, notice, event):
     """- Wash the duck blood off your hands."""
     with chan_locks[conn.name][chan.casefold()]:
-        msg = 'You wash the ducks off your hands, they scamper and float away.'
+        msg = 'You wash the {}s off your hands, they scamper and float away.'.format(get_animal())
         return msg
 
 
@@ -758,7 +765,7 @@ def ducks_user(text, nick, chan, conn, db, message):
             )
         )
     else:
-        return "It appears {} has not participated in the duck hunt.".format(name)
+        return "It appears {} has not participated in the {} hunt.".format(name, get_animal())
 
 
 @hook.command("duckstats", autohelp=False)
