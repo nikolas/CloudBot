@@ -480,7 +480,7 @@ def bang(nick, chan, message, db, conn, notice, event):
 def bait(nick, chan, message, db, conn, notice, event):
     """- Throw some duck bait."""
     baits = [
-        ('jellybean-flavored burritos', '.🌯 , `.'),
+        ('Quality Burritos', '🌯🌯🌯'),
         ('blue zarf', '💊. . .💊'),
         ('vic\'s pizza', '🍕🍕'),
         ('Wendy\'s chicken sandwiches', 'I can\'t believe you wasted those!'),
