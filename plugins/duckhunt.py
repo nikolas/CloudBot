@@ -12,6 +12,9 @@ from cloudbot.event import EventType
 from cloudbot.util import database
 from cloudbot.util.formatting import pluralize_auto
 
+word_file = "/usr/share/dict/words"
+WORDS = open(word_file).read().splitlines()
+
 duck_tails = [
     "｡･ ﾟ･｡* ｡ +ﾟ｡･.｡* ﾟ + ｡･ﾟ･",
     "・゜゜・。。・゜゜",
@@ -400,7 +403,17 @@ def attack(event, nick, chan, message, db, conn, notice, attack):
         smoke_type = random.choice(smoke_types)
 
         msg = "{} " + "You {} with the {} ".format(smoke_type, animal) + "for {:.3f} seconds." + " {} You just made a new {} friend. :)".format(story, animal)
-        no_duck = "No {}s around to smoke with, so you {} with rblor.".format(animal, smoke_type)
+        if random.random() > 0.75:
+            msg = ' '.join([
+                random.choice(WORDS), random.choice(WORDS),
+                random.choice(WORDS), random.choice(WORDS),
+                random.choice(WORDS), random.choice(WORDS),
+                random.choice(WORDS), random.choice(WORDS),
+                random.choice(WORDS), random.choice(WORDS),
+                random.choice(WORDS), random.choice(WORDS),
+                random.choice(WORDS),
+            ])
+        no_duck = "No {}s around to {} with, so you {} with rblor.".format(animal, random.choice(WORDS), smoke_type)
         scripter_msg = "You tried smoking with that " + animal + " in {:.3f} seconds!! Are you sure you aren't a bot? Take a 2 hour cool down."
         attack_type = "friend"
         # TODO: add secret 420 functionality
