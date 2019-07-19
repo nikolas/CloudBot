@@ -8,6 +8,7 @@ from sqlalchemy import Table, Column, String, Integer, PrimaryKeyConstraint, des
 from sqlalchemy.sql import select
 
 from cloudbot import hook
+from cloudbot.event import EventType
 from cloudbot.util import database, web
 
 duck = [" ε=ε=ε=ε=ε=┌(；　・＿・)┘ ", " ε=ε=ε=ε=ε=ε=┌(๑ʘ∀ʘ)┘ ", " ===≡≡≡｡ﾟ┌(ﾟ´Д`ﾟ)┘ﾟ｡ ", " ・・・・・・・ᕕ(╯°□°)ᕗ "]

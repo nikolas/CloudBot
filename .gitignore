@@ -60,3 +60,4 @@ config.json
 .idea/
 
 ve/
+venv/
