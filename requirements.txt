@@ -17,5 +17,8 @@ requests-oauthlib==1.2.0
 SQLAlchemy==1.2.12
 tweepy==3.7.0
 watchdog==0.9.0
-typing==3.6.6  # for yarl
+
+# for yarl
+typing==3.6.6; python_version < '3.5'
+
 yarl==1.2.0
