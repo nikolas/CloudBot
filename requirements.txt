@@ -10,7 +10,7 @@ lxml==4.3.4
 microdata==0.6.1
 nltk==3.4
 psutil==5.5.1
-pyenchant==2.0.0
+pyenchant==3.0.1
 pythonwhois==2.4.3
 requests==2.22.0
 requests-oauthlib==1.2.0
