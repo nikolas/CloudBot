@@ -3,6 +3,20 @@ update_configs:
   - package_manager: "python"
     directory: "/"
     update_schedule: "live"
+    automerged_updates:
+      - match:
+          dependency_type: "development"
+          update_type: "all"
+      - match:
+          dependency_type: "production"
+          update_type: "all"
   - package_manager: "python"
     directory: "/travis/"
     update_schedule: "live"
+    automerged_updates:
+      - match:
+          dependency_type: "development"
+          update_type: "all"
+      - match:
+          dependency_type: "production"
+          update_type: "all"
