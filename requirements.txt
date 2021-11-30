@@ -7,7 +7,7 @@ git+https://github.com/CloudBotIRC/mcstatus.git@master
 imgurpython==1.1.7
 isodate==0.6.0
 lxml==4.3.4
-microdata==0.6.1
+microdata==0.7.2
 nltk==3.4
 psutil==5.5.1
 pyenchant==2.0.0
