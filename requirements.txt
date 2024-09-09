@@ -21,4 +21,4 @@ watchdog==0.9.0
 # for yarl
 typing==3.6.6; python_version < '3.5'
 
-yarl==1.2.0
+yarl==1.11.1
